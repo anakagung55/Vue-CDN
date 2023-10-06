@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing Pertunjukan Tari Kecak</title>
+    <!-- Tambahkan link ke Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+        <div style="height: 200px;">
+        <h1 class="text-5xl font-semibold text-black">Selamat Datang di Pertunjukan Tari Kecak</h1>
+            <div class="my-7">
+                <nav class="text-center left-0 right-0 py-6">
+                    <ul class="list-none p-0 m-0">
+                      <li class="inline-block mx-4 text-black"><a href="#home">Home</a></li>
+                      <li class="inline-block mx-4 text-black"><a href="#about">About</a></li>
+                      <li class="inline-block mx-4 text-black"><a href="#pesan-tiket">Pesan Tiket</a></li>
+                    </ul>
+                  </nav>                  
+            </div>
+        </div>
+            <header class="text-center relative" style="height: 800px; display: flex; justify-content: center; align-items: center;">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-origin-content bg-center" style="background-image: url('kecak.jpg');"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 py-10 text-white bg-opacity-50 bg-black p-4 rounded-lg text-center">
+                  <span class="font-semibold text-5xl">Tari Kecak Batubulan</span> <br><br>
+                  <span class="text-2xl font-semibold">Pesan Melalui website ini untuk menonton Pertunjukan Tari Kecak dan Api yang terkenal di Uluwatu. Dapatkan jaminan kursi terlebih dahulu dan hindari antrean panjang di loket tiket. Silahkan pesan sehari sebelumnya paling lambat jam 18:00 WIB</span>
+                </div>
+              </header>
+              
+            </section>
+            <section class="bg-white p-6 rounded-lg shadow-lg mt-6 bg-center margin-left: auto; margin-right: auto;">
+                <center>
+                <h2 class="text-2xl font-semibold mb-4">Pemesanan Tiket</h2>
+                <p class="mb-2">Nama Pertunjukan: {{ showName }}</p>
+                <label for="showDate" class="block mb-2">Tanggal Pertunjukan:</label>
+                <input type="date" v-model="showDate" id="showDate" class="w-full p-2 border border-gray-300 rounded-lg">
+
+                <p class="mb-4">Harga Tiket: ${{ ticketPrice }}</p>
+                <label for="quantity" class="block mb-2">Jumlah Tiket:</label>
+                <input type="number" v-model="ticketQuantity" id="quantity" class="w-20 p-2 border border-gray-300 rounded-lg" min="0">
+                <p class="mt-2">Total Harga: ${{ total }}</p>
+                <button @click="bookTickets" class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 hover:bg-blue-600 focus:outline-none">Pesan Tiket</button>
+                </center>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.2.6"></script>
+    <script src="calculator.js">
+    </script>
+</body>
+</html>
